@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Contacts</title>
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body ng-app='contacts'>
     <div ng-controller='mainCtrl'>
@@ -24,23 +25,11 @@
          <md-button ng-click="close()" class="md-primary" hide-gt-md>
            Close Sidenav Left
          </md-button>
-         <md-list>
-           <md-list-item>
-             <md-button>All Contacts</md-button>
-           </md-list-item>
-           <md-list-item>
-             <md-button>Favorites</md-button>
-           </md-list-item>
-           <md-list-item>
-             <md-button>Family</md-button>
-           </md-list-item>
-           <md-list-item>
-             <md-button>Friends</md-button>
-           </md-list-item>
-           <md-list-item>
-             <md-button>Business</md-button>
-           </md-list-item>
-         </md-list>
+         <md-button class='sidenav_btn'>All Contacts</md-button>
+         <md-button class='sidenav_btn'>Favorites</md-button>
+         <md-button class='sidenav_btn'>Family</md-button>
+         <md-button class='sidenav_btn'>Friends</md-button>
+         <md-button class='sidenav_btn'>Friends</md-button>
        </md-content>
      </md-sidenav>
     </div>
