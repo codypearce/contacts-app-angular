@@ -15,6 +15,20 @@
           </md-button>
         </div>
       </md-toolbar>
+      <md-sidenav
+       class="md-sidenav-left"
+       md-component-id="left"
+       md-is-locked-open="$mdMedia('gt-sm')"
+       md-whiteframe="4">
+       <md-content layout-padding ng-controller="LeftCtrl">
+         <md-button ng-click="close()" class="md-primary" hide-gt-md>
+           Close Sidenav Left
+         </md-button>
+         <p hide show-gt-md>
+           All
+         </p>
+       </md-content>
+     </md-sidenav>
     </div>
     <script src='bower_components/angular/angular.min.js'></script>
     <script src='bower_components/angular-animate/angular-animate.min.js'></script>
