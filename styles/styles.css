@@ -15,3 +15,9 @@
   height: 150px;
   width: 200px;
 }
+
+.md-fab {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+}
