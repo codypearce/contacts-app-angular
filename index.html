@@ -34,11 +34,25 @@
          </md-content>
        </md-sidenav>
        <md-content flex layout-padding>
-
         <div layout="column" layout-align="center center">
-          <p>
-          Content
-          </p>
+          <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch layout="row" layout-padding>
+            <md-card-title-media>
+              <div class="md-media-lg card-media">
+                <img src="./images/luke-skywalker.jpg" class='contactList_img' alt="">
+              </div>
+            </md-card-title-media>
+           <div layout='column'>
+             <md-card-title>
+               <md-card-title-text>
+                 <span class="md-headline">Luke Skywalker</span>
+               </md-card-title-text>
+             </md-card-title>
+           </md-card>
+             <md-card-content>
+               <p>Phone: 555-555-5555</p>
+               <p>Email: skywalkingoveru@rebels.io</p>
+             </md-card-content>
+           </div>
 
         </div>
 

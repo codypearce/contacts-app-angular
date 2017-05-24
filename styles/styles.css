@@ -3,3 +3,9 @@
   text-align: left;
   display: block;
 }
+
+
+.contactList_img {
+  height: 150px;
+  width: 200px;
+}
