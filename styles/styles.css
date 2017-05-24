@@ -4,7 +4,13 @@
   display: block;
 }
 
-
+.contactList {
+  width: 600px;
+}
+.contactList:hover {
+  background: rgba(158,158,158,0.2);
+  cursor: pointer;
+}
 .contactList_img {
   height: 150px;
   width: 200px;

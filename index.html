@@ -35,8 +35,7 @@
        </md-sidenav>
        <md-content flex layout-padding>
         <div layout="column" layout-align="center center">
-
-          <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch layout="row" layout-padding ng-repeat="contact in contacts">
+          <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch class='contactList' layout="row" layout-padding ng-repeat="contact in contacts">
             <md-card-title-media>
               <div class="md-media-lg card-media">
                 <img src="./images/{{contact.img}}" class='contactList_img' alt="">
