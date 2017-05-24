@@ -6,32 +6,44 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
-  <body ng-app='contacts'>
-    <div ng-controller='mainCtrl'>
+  <body ng-app='contacts' layout-fill>
+    <div ng-controller='mainCtrl'  layout="column" layout-fill>
       <md-toolbar>
-        <div class="md-toolbar-tools">
+        <div class="md-toolbar-tools" >
           <h2 flex>Contacts</h2>
           <md-button class="md-icon-button" aria-label="More">
             <span>CP</span>
           </md-button>
         </div>
       </md-toolbar>
-      <md-sidenav
-       class="md-sidenav-left"
-       md-component-id="left"
-       md-is-locked-open="$mdMedia('gt-sm')"
-       md-whiteframe="4">
-       <md-content layout-padding ng-controller="LeftCtrl">
-         <md-button ng-click="close()" class="md-primary" hide-gt-md>
-           Close Sidenav Left
-         </md-button>
-         <md-button class='sidenav_btn'>All Contacts</md-button>
-         <md-button class='sidenav_btn'>Favorites</md-button>
-         <md-button class='sidenav_btn'>Family</md-button>
-         <md-button class='sidenav_btn'>Friends</md-button>
-         <md-button class='sidenav_btn'>Friends</md-button>
-       </md-content>
-     </md-sidenav>
+      <section layout="row" flex>
+        <md-sidenav
+         class="md-sidenav-left"
+         md-component-id="left"
+         md-is-locked-open="$mdMedia('gt-sm')"
+         md-whiteframe="4">
+         <md-content layout-padding ng-controller="LeftCtrl">
+           <md-button ng-click="close()" class="md-primary" hide-gt-md>
+             Close Sidenav Left
+           </md-button>
+           <md-button class='sidenav_btn'>All Contacts</md-button>
+           <md-button class='sidenav_btn'>Favorites</md-button>
+           <md-button class='sidenav_btn'>Family</md-button>
+           <md-button class='sidenav_btn'>Friends</md-button>
+           <md-button class='sidenav_btn'>Friends</md-button>
+         </md-content>
+       </md-sidenav>
+       <md-content flex layout-padding>
+
+        <div layout="column" layout-align="center center">
+          <p>
+          Content
+          </p>
+
+        </div>
+
+        <div flex></div>
+      </section>
     </div>
     <script src='bower_components/angular/angular.min.js'></script>
     <script src='bower_components/angular-animate/angular-animate.min.js'></script>
