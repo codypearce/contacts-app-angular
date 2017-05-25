@@ -12,16 +12,40 @@
 
     <md-dialog-content>
       <div class="md-dialog-content">
-        <h2>Add contact</h2>
-
+        <div layout-gt-xs="row">
+          <md-input-container>
+            <label>First Name</label>
+            <input ng-model="contact.firstName">
+          </md-input-container>
+          <md-input-container>
+            <label>Last Name</label>
+            <input ng-model="contact.lastName">
+          </md-input-container>
+        </div>
+        <div layout-gt-xs="row">
+          <md-input-container>
+            <label>Phone</label>
+            <input ng-model="contact.phone">
+          </md-input-container>
+          <md-input-container>
+            <label>Email</label>
+            <input ng-model="contact.email">
+          </md-input-container>
+        </div>
+        <div layout-gt-xs="row">
+          <md-input-container>
+            <label>Img</label>
+            <input ng-model="contact.img">
+          </md-input-container>
+        </div>
       </div>
     </md-dialog-content>
 
     <md-dialog-actions layout="row">
-      <md-button ng-click="answer('not useful')">
+      <md-button ng-click="cancel()">
        Cancel
       </md-button>
-      <md-button md-primary ng-click="answer('useful')">
+      <md-button md-primary ng-click="addContact(contact)">
         Add
       </md-button>
     </md-dialog-actions>

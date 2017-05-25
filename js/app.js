@@ -27,8 +27,8 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog) {
      clickOutsideToClose:true,
      fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
    })
-   .then(function(answer) {
-     console.log(answer)
+   .then(function(contact) {
+     console.log(contact)
    }, function() {
      console.log('canceled')
    });
@@ -43,8 +43,8 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog) {
       $mdDialog.cancel();
     };
 
-    $scope.answer = function(answer) {
-      $mdDialog.hide(answer);
+    $scope.addContact = function(contact) {
+      $mdDialog.hide(contact);
     };
   }
 })
