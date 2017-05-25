@@ -30,7 +30,7 @@
            <md-button class='sidenav_btn'>Favorites</md-button>
            <md-button class='sidenav_btn'>Family</md-button>
            <md-button class='sidenav_btn'>Friends</md-button>
-           <md-button class='sidenav_btn'>Friends</md-button>
+           <md-button class='sidenav_btn'>Work</md-button>
          </md-content>
        </md-sidenav>
        <md-content flex layout-padding>
@@ -54,7 +54,11 @@
              </md-card-content>
            </div>
         </div>
-        <md-button class="md-fab md-primary" aria-label="Use Android">
+        <md-button class="md-fab md-primary" aria-label="Use Android" ng-click="addContact($event)">
+          <md-tooltip
+            md-direction="top">
+            Add Contact
+          </md-tooltip>
           <img ng-src="./images/icons/add.svg"></img>
         </md-button>
       </section>
