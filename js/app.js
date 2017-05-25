@@ -1,6 +1,6 @@
 var app = angular.module('contacts', ['ngMaterial']);
 
-app.controller('mainCtrl', function($scope,  $mdSidenav) {
+app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog) {
   $scope.contacts = [
     {
       firstName: 'Luke',
@@ -18,6 +18,35 @@ app.controller('mainCtrl', function($scope,  $mdSidenav) {
     },
   ];
 
+  $scope.addContact = function(ev) {
+   $mdDialog.show({
+     controller: DialogController,
+     templateUrl: '../templates/addContact.html',
+     parent: angular.element(document.body),
+     targetEvent: ev,
+     clickOutsideToClose:true,
+     fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+   })
+   .then(function(answer) {
+     console.log(answer)
+   }, function() {
+     console.log('canceled')
+   });
+  };
+
+  function DialogController($scope, $mdDialog) {
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+  }
 })
 
 app.controller('LeftCtrl', function($scope) {
