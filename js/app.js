@@ -1,22 +1,7 @@
 var app = angular.module('contacts', ['ngMaterial']);
 
-app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog) {
-  $scope.contacts = [
-    {
-      firstName: 'Luke',
-      lastName: 'Skywalker',
-      phone: '555-555-5555',
-      email: 'skywalkingoveru@rebels.io',
-      img: 'luke-skywalker.jpg',
-    },
-    {
-      firstName: 'Darth',
-      lastName: 'Vader',
-      phone: '555-555-5554',
-      email: 'idontlikesand@empire.io',
-      img: 'darth-vader.jpg',
-    },
-  ];
+app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts) {
+  $scope.contacts = contacts.contacts;
 
   $scope.addContact = function(ev) {
    $mdDialog.show({
@@ -34,7 +19,7 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog) {
    });
   };
 
-  function DialogController($scope, $mdDialog) {
+  function DialogController($scope, $mdDialog, contacts) {
     $scope.hide = function() {
       $mdDialog.hide();
     };
@@ -44,7 +29,8 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog) {
     };
 
     $scope.addContact = function(contact) {
-      $mdDialog.hide(contact);
+      $mdDialog.hide();
+      contacts.addContact(contact);
     };
   }
 })
@@ -52,3 +38,26 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog) {
 app.controller('LeftCtrl', function($scope) {
   console.log('test')
 })
+
+app.service('contacts', function() {
+    this.contacts =  [
+      {
+        firstName: 'Luke',
+        lastName: 'Skywalker',
+        phone: '555-555-5555',
+        email: 'skywalkingoveru@rebels.io',
+        img: 'luke-skywalker.jpg',
+      },
+      {
+        firstName: 'Darth',
+        lastName: 'Vader',
+        phone: '555-555-5554',
+        email: 'idontlikesand@empire.io',
+        img: 'darth-vader.jpg',
+      },
+    ];
+
+    this.addContact = function(contact) {
+      this.contacts.push(contact);
+    }
+});
