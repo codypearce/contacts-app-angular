@@ -1,4 +1,3 @@
-
 app.service('contacts', function() {
     this.contacts =  [
       {
