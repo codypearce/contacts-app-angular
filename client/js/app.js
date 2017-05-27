@@ -3,11 +3,11 @@ var app = angular.module('contacts', ['ngMaterial', 'ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "index.html",
+        templateUrl : "templates/home.html",
         controller: 'mainCtrl'
     })
     .when("/contact", {
-        templateUrl : "contact.html"
+        templateUrl : "templates/contact.html"
     })
 });
 
