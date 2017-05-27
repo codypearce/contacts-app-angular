@@ -1,4 +1,4 @@
-var app = angular.module('contacts', ['ngMaterial']);
+var app = angular.module('contacts', ['ngMaterial', 'ngRoute']);
 
 app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts) {
   $scope.contacts = contacts.contacts;
