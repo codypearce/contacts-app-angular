@@ -36,3 +36,13 @@ function DialogController($scope, $mdDialog, contacts) {
 app.controller('LeftCtrl', function($scope) {
   console.log('test')
 })
+
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "index.html"
+    })
+    .when("/contact", {
+        templateUrl : "contact.html"
+    })
+});
