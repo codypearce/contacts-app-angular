@@ -16,53 +16,11 @@
           </md-button>
         </div>
       </md-toolbar>
-      <section layout="row" flex>
-        <md-sidenav
-         class="md-sidenav-left"
-         md-component-id="left"
-         md-is-locked-open="$mdMedia('gt-sm')"
-         md-whiteframe="4">
-         <md-content layout-padding ng-controller="LeftCtrl">
-           <md-button ng-click="close()" class="md-primary" hide-gt-md>
-             Close Sidenav Left
-           </md-button>
-           <md-button class='sidenav_btn'>All Contacts</md-button>
-           <md-button class='sidenav_btn'>Favorites</md-button>
-           <md-button class='sidenav_btn'>Family</md-button>
-           <md-button class='sidenav_btn'>Friends</md-button>
-           <md-button class='sidenav_btn'>Work</md-button>
-         </md-content>
-       </md-sidenav>
-       <md-content flex layout-padding>
-        <div layout="column" layout-align="center center">
-          <md-card md-theme="default" md-theme-watch class='contactList' layout="row" layout-padding ng-repeat="contact in contacts">
-            <md-card-title-media>
-              <div class="md-media-lg card-media">
-                <img ng-if=contact.img ng-src="./images/{{contact.img}}" class='contactList_img' alt="">
-                <img ng-if=!contact.img ng-src="./images/stormtrooper.jpg" class='contactList_img' alt="">
-              </div>
-            </md-card-title-media>
-           <div layout='column'>
-             <md-card-title>
-               <md-card-title-text>
-                 <span class="md-headline">{{contact.firstName}} {{contact.lastName}}</span>
-               </md-card-title-text>
-             </md-card-title>
-           </md-card>
-             <md-card-content>
-               <p>Phone: {{contact.phone}}</p>
-               <p>Email: {{contact.email}}</p>
-             </md-card-content>
-           </div>
+      <div class="main">
+        <div ng-view>
+
         </div>
-        <md-button class="md-fab md-primary" aria-label="Use Android" ng-click="addContact($event)">
-          <md-tooltip
-            md-direction="top">
-            Add Contact
-          </md-tooltip>
-          <img ng-src="./images/icons/add.svg"></img>
-        </md-button>
-      </section>
+      </div>
     </div>
     <script src='bower_components/angular/angular.min.js'></script>
     <script src='bower_components/angular-animate/angular-animate.min.js'></script>

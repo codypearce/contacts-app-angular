@@ -1,5 +1,17 @@
 var app = angular.module('contacts', ['ngMaterial', 'ngRoute']);
 
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "index.html",
+        controller: 'mainCtrl'
+    })
+    .when("/contact", {
+        templateUrl : "contact.html"
+    })
+});
+
+
 app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts) {
   $scope.contacts = contacts.contacts;
 
@@ -36,13 +48,3 @@ function DialogController($scope, $mdDialog, contacts) {
 app.controller('LeftCtrl', function($scope) {
   console.log('test')
 })
-
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "index.html"
-    })
-    .when("/contact", {
-        templateUrl : "contact.html"
-    })
-});
