@@ -58,8 +58,9 @@ function DialogController($scope, $mdDialog, contacts) {
     contacts.addContact(contact);
   };
 }
-app.controller('sideNavCtrl', function($scope, contacts, filterContacts) {
+app.controller('sideNavCtrl', function($scope, contacts, filterContacts, $location) {
   $scope.updateFilter = function(filter) {
     filterContacts.updateFilter(filter);
+    $location.path('/');
   }
 })

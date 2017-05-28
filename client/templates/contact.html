@@ -1,5 +1,5 @@
-<section layout="row" flex>
- <md-content flex layout-padding>
+
+<md-content flex layout-padding>
   <div layout="column" layout-align="center center">
     <md-card class="contactCard">
         <div class="contact_imgContainer">
@@ -24,8 +24,13 @@
               {{contact.email}}
             </h2>
           </div>
+          <div layout="row" layout-align="space-between center">
+            <h3>Labels</h3>
+            <div class="">
+                <strong href="/contact/{{contact.id}}" ng-repeat="label in contact.labels" class="noUnderline">{{label}} </strong>
+            </div>
+          </div>
         </md-card-content>
       </md-card>
-  </div>
-</section>
-</div>
+    </div>
+</md-content>

@@ -18,6 +18,15 @@ app.service('contacts', function() {
         img: 'darth-vader.jpg',
         labels: ['work', 'family'],
       },
+      {
+        id: 3,
+        firstName: 'Leia',
+        lastName: 'Skywalker',
+        phone: '555-555-5553',
+        email: 'youreshort@rebels.io',
+        img: 'leia-skywalker.jpg',
+        labels: ['family', 'favorites'],
+      },
     ];
     this.num = 3;
     this.addContact = function(contact) {

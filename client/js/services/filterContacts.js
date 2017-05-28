@@ -3,6 +3,5 @@ app.service('filterContacts', function(contacts) {
 
     this.updateFilter = function(filter) {
       this.filter = filter;
-      console.log(this.filter)
     }
 });
