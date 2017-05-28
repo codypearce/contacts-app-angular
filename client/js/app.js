@@ -15,10 +15,25 @@ app.config(function($routeProvider, $locationProvider) {
 
 
 app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts, filterContacts) {
-  $scope.contacts = contacts.contacts;
+  function firstSort(a,b) {
+    if (a.firstName < b.firstName)
+      return -1;
+    if (a.firstName > b.firstName)
+      return 1;
+    return 0;
+  }
+  function lastSort(a,b) {
+    if (a.lastName < b.lastName)
+      return -1;
+    if (a.lastName > b.lastName)
+      return 1;
+    return 0;
+  }
+
+  $scope.contacts = contacts.contacts.sort(firstSort).sort(lastSort);
   $scope.$watch(function() {return filterContacts.filter}, function(filter) {
     if(filterContacts.filter !== 'all') {
-      $scope.contacts = contacts.contacts.filter(x => x.labels.some(a => a == filterContacts.filter));
+      $scope.contacts = contacts.contacts.filter(x => x.labels.some(a => a == filterContacts.filter)).sort(firstSort).sort(lastSort);
     }
   });
 
