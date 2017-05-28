@@ -6,7 +6,7 @@ app.config(function($routeProvider, $locationProvider) {
         templateUrl : "templates/home.html",
         controller: 'mainCtrl'
     })
-    .when("/contact", {
+    .when("/contact/:id", {
         templateUrl : "templates/contact.html"
     })
     $locationProvider.html5Mode(true);
