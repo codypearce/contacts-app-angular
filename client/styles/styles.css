@@ -28,11 +28,12 @@
 .contact_imgContainer {
   height: 550px;
   width: 100%;
+  overflow-y: hidden;
   background: rgba(0,0,0,.1);
 }
 .contact_img {
-  height: 550px;
-  margin: 0 auto;
+  width: 100%;
+  margin: auto;
   display: block;
   background: rgba(0,0,0,.3);
 }
