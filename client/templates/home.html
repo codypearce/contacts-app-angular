@@ -1,22 +1,4 @@
-<section layout="row" flex layout-fill>
-  <md-sidenav
-   class="md-sidenav-left"
-   md-component-id="left"
-   md-is-locked-open="$mdMedia('gt-sm')"
-   md-whiteframe="4"
-   layout-fill>
-   <md-content layout-padding ng-controller="LeftCtrl">
-     <md-button ng-click="close()" class="md-primary" hide-gt-md>
-       Close Sidenav Left
-     </md-button>
-     <md-button class='sidenav_btn'>All Contacts</md-button>
-     <md-button class='sidenav_btn'>Favorites</md-button>
-     <md-button class='sidenav_btn'>Family</md-button>
-     <md-button class='sidenav_btn'>Friends</md-button>
-     <md-button class='sidenav_btn'>Work</md-button>
-   </md-content>
- </md-sidenav>
- <md-content flex layout-padding>
+<md-content flex layout-padding>
   <div layout="column" layout-align="center center">
     <md-card md-theme="default" md-theme-watch class='contactList' layout="row" layout-padding ng-repeat="contact in contacts">
       <md-card-title-media>
@@ -45,4 +27,4 @@
     </md-tooltip>
     <img ng-src="./images/icons/add.svg"></img>
   </md-button>
-</section>
+</md-content>
