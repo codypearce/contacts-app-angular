@@ -22,10 +22,19 @@
   right: 25px;
 }
 
-
+.contactCard {
+  width: 70%;
+}
+.contact_imgContainer {
+  height: 550px;
+  width: 100%;
+  background: rgba(0,0,0,.1);
+}
 .contact_img {
   height: 550px;
-  width: auto;
+  margin: 0 auto;
+  display: block;
+  background: rgba(0,0,0,.3);
 }
 
 .noUnderline {
