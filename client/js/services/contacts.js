@@ -31,6 +31,7 @@ app.service('contacts', function() {
     this.num = 3;
     this.addContact = function(contact) {
       contact.id = this.num;
+      
       this.num++;
       this.contacts.push(contact);
     }

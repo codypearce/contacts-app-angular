@@ -29,11 +29,7 @@
              <md-button ng-click="close()" class="md-primary" hide-gt-md>
                Close Sidenav Left
              </md-button>
-             <md-button class='sidenav_btn' ng-click="updateFilter('all')">All Contacts</md-button>
-             <md-button class='sidenav_btn' ng-click="updateFilter('favorites')">Favorites</md-button>
-             <md-button class='sidenav_btn' ng-click="updateFilter('family')">Family</md-button>
-             <md-button class='sidenav_btn' ng-click="updateFilter('friends')">Friends</md-button>
-             <md-button class='sidenav_btn' ng-click="updateFilter('work')">Work</md-button>
+             <md-button class='sidenav_btn' ng-click="updateFilter(label)" ng-repeat="label in labels">{{label}}</md-button>
            </md-content>
          </md-sidenav>
           <div ng-view layout-fill>
@@ -52,4 +48,5 @@
     <script src='js/app.js'></script>
     <script src='js/services/contacts.js'></script>
     <script src='js/services/filterContacts.js'></script>
+    <script src='js/services/labels.js'></script>
 </html>
