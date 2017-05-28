@@ -34,6 +34,8 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts, fi
   $scope.$watch(function() {return filterContacts.filter}, function(filter) {
     if(filterContacts.filter !== 'all') {
       $scope.contacts = contacts.contacts.filter(x => x.labels.some(a => a == filterContacts.filter)).sort(firstSort).sort(lastSort);
+    } else {
+      $scope.contacts = contacts.contacts.sort(firstSort).sort(lastSort);
     }
   });
 
@@ -62,7 +64,7 @@ app.controller('contactCtrl', function($scope, $routeParams, contacts) {
 
 function DialogController($scope, $mdDialog, contacts, labels) {
   $scope.labels = labels.labels;
-  
+
   $scope.hide = function() {
     $mdDialog.hide();
   };
