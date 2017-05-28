@@ -10,8 +10,13 @@
   <body ng-app='contacts' layout-fill>
     <div ng-controller='mainCtrl'  layout="column" layout-fill>
       <md-toolbar>
-        <div class="md-toolbar-tools" >
-          <a href="/" flex><h2 >Contacts</h2></a>
+        <div class="md-toolbar-tools" layout-align='space-between center' >
+          <a href="/" ><h2 >Contacts</h2></a>
+          <md-input-container class="search">
+            <md-icon md-svg-src="/images/icons/search.svg" class="searchIcon"></md-icon>
+            <label class="searchLabel">Search</label>
+            <input ng-model="search" class='searchInput'>
+          </md-input-container>
           <md-button class="md-icon-button" aria-label="More">
             <span>JS</span>
           </md-button>

@@ -41,3 +41,33 @@
 .noUnderline {
   text-decoration: none;
 }
+
+md-input-container.search {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+md-input-container .searchIcon {
+  margin: 0 15px;
+  top: 14px;
+}
+md-input-container .searchInput {
+  color:white;
+  margin-left: 50px;
+  width: 500px;
+  border: 0px;
+}
+md-input-container .searchLabel {
+  color: rgba(255,255,255,.3);
+  margin-left: 25px;
+}
+md-input-container label:not(.md-container-ignore).searchLabel {
+  bottom: 40px;
+}
+md-input-container.md-input-focused label:not(.md-container-ignore).searchLabel {
+  display: none;
+}
+
+md-input-container .md-errors-spacer {
+  min-height: 0px;
+}
