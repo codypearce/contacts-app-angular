@@ -1,6 +1,6 @@
 var app = angular.module('contacts', ['ngMaterial', 'ngRoute']);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
     $routeProvider
     .when("/", {
         templateUrl : "templates/home.html",
@@ -9,6 +9,7 @@ app.config(function($routeProvider) {
     .when("/contact", {
         templateUrl : "templates/contact.html"
     })
+    $locationProvider.html5Mode(true);
 });
 
 
