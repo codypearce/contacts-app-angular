@@ -1,6 +1,6 @@
 <md-content flex layout-padding>
   <div layout="column" layout-align="center center">
-    <a href="/contact/{{contact.id}}" ng-repeat="contact in contacts" class="noUnderline">
+    <a href="/contact/{{contact.id}}" ng-repeat="contact in contacts | filter:{firstName:search}" class="noUnderline">
       <md-card md-theme="default" md-theme-watch class='contactList' layout="row" layout-padding >
         <md-card-title-media>
           <div class="md-media-lg card-media">
