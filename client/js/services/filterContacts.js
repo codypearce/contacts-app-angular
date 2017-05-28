@@ -1,4 +1,8 @@
 app.service('filterContacts', function(contacts) {
-    this.filter = 'work';
+    this.filter = 'all';
 
+    this.updateFilter = function(filter) {
+      this.filter = filter;
+      console.log(this.filter)
+    }
 });

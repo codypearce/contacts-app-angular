@@ -15,12 +15,12 @@ app.config(function($routeProvider, $locationProvider) {
 
 
 app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts, filterContacts) {
-  if(filterContacts.filter == 'all') {
-    $scope.contacts = contacts.contacts;
-  } else {
-    $scope.contacts = contacts.contacts.filter(x => x.labels.some(a => a == filterContacts.filter));
-  }
-
+  $scope.contacts = contacts.contacts;
+  $scope.$watch(function() {return filterContacts.filter}, function(filter) {
+    if(filterContacts.filter !== 'all') {
+      $scope.contacts = contacts.contacts.filter(x => x.labels.some(a => a == filterContacts.filter));
+    }
+  });
 
   $scope.addContact = function(ev) {
    $mdDialog.show({
@@ -58,9 +58,8 @@ function DialogController($scope, $mdDialog, contacts) {
     contacts.addContact(contact);
   };
 }
-app.controller('LeftCtrl', function($scope, contacts) {
-  $scope.contactFilter = 'All';
-  if($scope.contactFilter == 'favorites') {
-    contacts.filter()
+app.controller('sideNavCtrl', function($scope, contacts, filterContacts) {
+  $scope.updateFilter = function(filter) {
+    filterContacts.updateFilter(filter);
   }
 })
