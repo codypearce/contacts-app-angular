@@ -11,7 +11,7 @@
     <div ng-controller='mainCtrl'  layout="column" layout-fill>
       <md-toolbar>
         <div class="md-toolbar-tools" >
-          <h2 flex>Contacts</h2>
+          <a href="/" flex><h2 >Contacts</h2></a>
           <md-button class="md-icon-button" aria-label="More">
             <span>CP</span>
           </md-button>
@@ -29,7 +29,7 @@
              <md-button ng-click="close()" class="md-primary" hide-gt-md>
                Close Sidenav Left
              </md-button>
-             <md-button class='sidenav_btn'>All Contacts</md-button>
+             <md-button class='sidenav_btn' href='/'>All Contacts</md-button>
              <md-button class='sidenav_btn'>Favorites</md-button>
              <md-button class='sidenav_btn'>Family</md-button>
              <md-button class='sidenav_btn'>Friends</md-button>
@@ -41,7 +41,7 @@
           </div>
         </section>
       </div>
-    </div>
+    </div>g
     <script src='bower_components/angular/angular.min.js'></script>
     <script src='bower_components/angular-animate/angular-animate.min.js'></script>
     <script src='bower_components/angular-aria/angular-aria.min.js'></script>
