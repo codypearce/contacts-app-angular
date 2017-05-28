@@ -1,9 +1,24 @@
+<section layout="row" flex>
+ <md-content flex layout-padding>
+  <div layout="column" layout-align="center center">
 
-  <section layout="row" flex>
-
-   <md-content flex layout-padding>
-    <div layout="column" layout-align="center center">
-      <h1>Contact Name</h1>
-    </div>
-  </section>
+    <md-card>
+        <img ng-src="./images/{{contact.img}}" class="md-card-image" alt="{{contact.firstName + contact.lastName}}">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline"><h1>{{contact.firstName}} {{contact.lastName}}</h1></span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p>
+            {{contact.email}}
+          </p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
   </div>
+</section>
+</div>
