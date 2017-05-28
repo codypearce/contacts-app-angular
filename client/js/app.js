@@ -14,8 +14,13 @@ app.config(function($routeProvider, $locationProvider) {
 });
 
 
-app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts) {
-  $scope.contacts = contacts.contacts;
+app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts, filterContacts) {
+  if(filterContacts.filter == 'all') {
+    $scope.contacts = contacts.contacts;
+  } else {
+    $scope.contacts = contacts.contacts.filter(x => x.labels.some(a => a == filterContacts.filter));
+  }
+
 
   $scope.addContact = function(ev) {
    $mdDialog.show({
@@ -53,6 +58,9 @@ function DialogController($scope, $mdDialog, contacts) {
     contacts.addContact(contact);
   };
 }
-app.controller('LeftCtrl', function($scope) {
-  console.log('test')
+app.controller('LeftCtrl', function($scope, contacts) {
+  $scope.contactFilter = 'All';
+  if($scope.contactFilter == 'favorites') {
+    contacts.filter()
+  }
 })

@@ -7,6 +7,7 @@ app.service('contacts', function() {
         phone: '555-555-5555',
         email: 'skywalkingoveru@rebels.io',
         img: 'luke-skywalker.jpg',
+        labels: ['family'],
       },
       {
         id: 2,
@@ -15,6 +16,7 @@ app.service('contacts', function() {
         phone: '555-555-5554',
         email: 'idontlikesand@empire.io',
         img: 'darth-vader.jpg',
+        labels: ['work', 'family'],
       },
     ];
     this.num = 3;
