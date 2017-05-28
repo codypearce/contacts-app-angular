@@ -1,9 +1,10 @@
-<section layout="row" flex>
+<section layout="row" flex layout-fill>
   <md-sidenav
    class="md-sidenav-left"
    md-component-id="left"
    md-is-locked-open="$mdMedia('gt-sm')"
-   md-whiteframe="4">
+   md-whiteframe="4"
+   layout-fill>
    <md-content layout-padding ng-controller="LeftCtrl">
      <md-button ng-click="close()" class="md-primary" hide-gt-md>
        Close Sidenav Left
