@@ -7,7 +7,8 @@ app.config(function($routeProvider, $locationProvider) {
         controller: 'mainCtrl'
     })
     .when("/contact/:id", {
-        templateUrl : "templates/contact.html"
+        templateUrl : "templates/contact.html",
+        controller: 'contactCtrl'
     })
     $locationProvider.html5Mode(true);
 });
@@ -31,6 +32,12 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts) {
      console.log('canceled')
    });
   };
+})
+
+app.controller('contactCtrl', function($scope, $routeParams, contacts) {
+  const id = $routeParams.id;
+  const contact = contacts.contacts.filter(x => x.id === parseInt(id))[0];
+  $scope.contact = contact;
 })
 
 function DialogController($scope, $mdDialog, contacts) {
