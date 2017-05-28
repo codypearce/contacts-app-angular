@@ -28,10 +28,9 @@ app.service('contacts', function() {
         labels: ['family', 'favorites'],
       },
     ];
-    this.num = 3;
+    this.num = 4;
     this.addContact = function(contact) {
       contact.id = this.num;
-      
       this.num++;
       this.contacts.push(contact);
     }

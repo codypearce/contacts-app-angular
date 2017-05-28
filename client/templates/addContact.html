@@ -33,6 +33,16 @@
           </md-input-container>
         </div>
         <div layout-gt-xs="row">
+          <md-input-container flex=50>
+            <label>Label</label>
+            <md-select ng-model="contact.labels" multiple>
+              <md-option ng-repeat="label in labels" ng-value="label"  ng-if="!$first">
+                {{label}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+        <div layout-gt-xs="row">
           <md-input-container>
             <label>Img</label>
             <input ng-model="contact.img">

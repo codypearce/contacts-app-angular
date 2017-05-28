@@ -60,7 +60,9 @@ app.controller('contactCtrl', function($scope, $routeParams, contacts) {
   $scope.contact = contact;
 })
 
-function DialogController($scope, $mdDialog, contacts) {
+function DialogController($scope, $mdDialog, contacts, labels) {
+  $scope.labels = labels.labels;
+  
   $scope.hide = function() {
     $mdDialog.hide();
   };
