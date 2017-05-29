@@ -48,8 +48,7 @@
             <input ng-model="locals.contact.img">
           </md-input-container>
           <md-input-container>
-            <label for="input-file-id" class="md-button md-raised md-primary">Upload Image</label>
-            <input class="ng-hide" id="input-file-id" type="file" />
+            <input type="file" enctype="multipart/form-data"  onchange="angular.element(this).scope().uploadFile(this)" />
           </md-input-container>
         </div>
       </div>
