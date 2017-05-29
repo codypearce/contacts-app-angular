@@ -49,15 +49,10 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts, fi
      fullscreen: $scope.customFullscreen,
      locals: {},
    })
-   .then(function(contact) {
-     console.log(contact)
-   }, function() {
-     console.log('canceled')
-   });
   };
 })
 
-app.controller('contactCtrl', function($scope, $routeParams, contacts,  $mdDialog) {
+app.controller('contactCtrl', function($scope, $routeParams, contacts,  $mdDialog, $location,) {
   const id = $routeParams.id;
   const contact = contacts.contacts.filter(x => x.id === parseInt(id))[0];
   $scope.contact = contact;
@@ -75,6 +70,10 @@ app.controller('contactCtrl', function($scope, $routeParams, contacts,  $mdDialo
       }
     })
   };
+  $scope.deleteContact = function() {
+    contacts.deleteContact($scope.contact);
+    $location.path('/');
+  }
 })
 
 function DialogController($scope, $mdDialog, contacts, labels, locals) {
@@ -82,7 +81,6 @@ function DialogController($scope, $mdDialog, contacts, labels, locals) {
   if(locals) {
     $scope.locals = locals;
   }
-
 
   $scope.hide = function() {
     $mdDialog.hide();

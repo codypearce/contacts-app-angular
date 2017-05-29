@@ -35,6 +35,11 @@ app.service('contacts', function() {
       this.contacts.push(contact);
     }
     this.editContact = function(contact) {
-      this.contacts[contact.id] = contact
+      const index = this.contacts.indexOf(contact);
+      this.contacts[index] = contact;
+    }
+    this.deleteContact = function(contact) {
+      const index = this.contacts.indexOf(contact);
+      this.contacts.splice(index, 1);
     }
 });
