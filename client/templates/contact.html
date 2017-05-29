@@ -5,6 +5,7 @@
         <div class="contact_imgContainer">
           <img ng-if=contact.img ng-src="./images/{{contact.img}}"  class="md-card-image contact_img" alt="{{contact.firstName + contact.lastName}}">
           <img ng-if=!contact.img ng-src="./images/stormtrooper.jpg"  class="md-card-image contact_img" alt="{{contact.firstName + contact.lastName}}">
+          <md-button ng-click="editContact(contact)" class="editButton">Edit</md-button>
         </div>
         <md-card-title layout-padding layout-margin>
           <md-card-title-text>

@@ -46,7 +46,8 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts, fi
      parent: angular.element(document.body),
      targetEvent: ev,
      clickOutsideToClose:true,
-     fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+     fullscreen: $scope.customFullscreen,
+     locals: {},
    })
    .then(function(contact) {
      console.log(contact)
@@ -56,14 +57,32 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts, fi
   };
 })
 
-app.controller('contactCtrl', function($scope, $routeParams, contacts) {
+app.controller('contactCtrl', function($scope, $routeParams, contacts,  $mdDialog) {
   const id = $routeParams.id;
   const contact = contacts.contacts.filter(x => x.id === parseInt(id))[0];
   $scope.contact = contact;
+
+  $scope.editContact = function(ev) {
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: '../templates/editContact.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+      fullscreen: $scope.customFullscreen,
+      locals: {
+        contact: $scope.contact,
+      }
+    })
+  };
 })
 
-function DialogController($scope, $mdDialog, contacts, labels) {
+function DialogController($scope, $mdDialog, contacts, labels, locals) {
   $scope.labels = labels.labels;
+  if(locals) {
+    $scope.locals = locals;
+  }
+
 
   $scope.hide = function() {
     $mdDialog.hide();
@@ -76,6 +95,10 @@ function DialogController($scope, $mdDialog, contacts, labels) {
     $mdDialog.hide();
     contacts.addContact(contact);
   };
+  $scope.editContact = function(contact) {
+    $mdDialog.hide();
+    contacts.editContact(contact);
+  }
 }
 app.controller('sideNavCtrl', function($scope, contacts, filterContacts, $location, labels) {
   $scope.labels = labels.labels;

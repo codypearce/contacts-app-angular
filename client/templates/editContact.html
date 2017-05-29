@@ -1,0 +1,67 @@
+<md-dialog aria-label="Edit contact">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Add Contact</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div layout-gt-xs="row">
+          <md-input-container>
+            <label>First Name</label>
+            <input ng-model="locals.contact.firstName">
+          </md-input-container>
+          <md-input-container>
+            <label>Last Name</label>
+            <input ng-model="locals.contact.lastName">
+          </md-input-container>
+        </div>
+        <div layout-gt-xs="row">
+          <md-input-container>
+            <label>Phone</label>
+            <input ng-model="locals.contact.phone">
+          </md-input-container>
+          <md-input-container>
+            <label>Email</label>
+            <input ng-model="locals.contact.email">
+          </md-input-container>
+        </div>
+        <div layout-gt-xs="row">
+          <md-input-container flex=50>
+            <label>Label</label>
+            <md-select ng-model="locals.contact.labels" multiple>
+              <md-option ng-repeat="label in labels" ng-value="label"  ng-if="!$first">
+                {{label}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+        <div layout-gt-xs="row">
+          <md-input-container>
+            <label>Img</label>
+            <input ng-model="locals.contact.img">
+          </md-input-container>
+          <md-input-container>
+            <label for="input-file-id" class="md-button md-raised md-primary">Upload Image</label>
+            <input class="ng-hide" id="input-file-id" type="file" />
+          </md-input-container>
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button ng-click="cancel()">
+       Cancel
+      </md-button>
+      <md-button md-primary ng-click="editContact(locals.contact)">
+        Save
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

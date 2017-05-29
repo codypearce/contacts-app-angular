@@ -34,5 +34,7 @@ app.service('contacts', function() {
       this.num++;
       this.contacts.push(contact);
     }
-
+    this.editContact = function(contact) {
+      this.contacts[contact.id] = contact
+    }
 });
