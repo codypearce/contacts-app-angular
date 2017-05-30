@@ -1,9 +1,11 @@
+/* SideNav */
 .sidenav_btn {
   width: 100%;
   text-align: left;
   display: block;
 }
 
+/* Main Page */
 .contactList {
   width: 600px;
   position: relative;
@@ -24,13 +26,21 @@
 .favoriteIcon:active, .favoriteIcon:focus {
   outline: none;
 }
-
 .md-fab {
   position: fixed;
   bottom: 25px;
   right: 25px;
 }
+.notLink {
+  text-decoration: none;
+  color: black;
+}
+.notLink:hover, .noLink:active, .noLink:visited {
+  color:black;
+}
 
+
+/* Contact Page */
 .contactCard {
   width: 70%;
 }
@@ -56,14 +66,7 @@
   font-size: 18px;
 }
 
-.notLink {
-  text-decoration: none;
-  color: black;
-}
-.notLink:hover, .noLink:active, .noLink:visited {
-  color:black;
-}
-
+/* Header and search */
 md-input-container.search {
   background: rgba(255, 255, 255, 0.2);
   padding: 10px 15px;
