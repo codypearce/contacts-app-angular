@@ -43,6 +43,15 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts, fi
     return contact.labels.indexOf('favorites') > -1;
    }
 
+   $scope.favoriteToggle = function(contact) {
+     const index = contact.labels.indexOf('favorites');
+     if(index > -1) {
+       contact.labels.splice(index, 1);
+     } else {
+       contact.labels.push('favorites');
+     }
+   }
+
   $scope.addContact = function(ev) {
    $mdDialog.show({
      controller: DialogController,

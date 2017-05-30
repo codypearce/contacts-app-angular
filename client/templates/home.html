@@ -1,27 +1,29 @@
 <md-content flex layout-padding>
   <div layout="column" layout-align="center center">
-    <a href="/contact/{{contact.id}}" ng-repeat="contact in contacts | filter:{firstName:search}" class="noUnderline">
-      <md-card md-theme="default" md-theme-watch class='contactList' layout="row" layout-padding >
-        <md-card-title-media>
-          <div class="md-media-lg card-media">
-            <img ng-if=contact.img ng-src="./images/{{contact.img}}" class='contactList_img' alt="">
-            <img ng-if=!contact.img ng-src="./images/stormtrooper.jpg" class='contactList_img' alt="">
-          </div>
-        </md-card-title-media>
-       <div layout='column'>
-         <md-card-title>
-           <md-card-title-text>
-             <span class="md-headline">{{contact.firstName}} {{contact.lastName}}</span>
-           </md-card-title-text>
-         </md-card-title>
-         <md-card-content>
-           <p>Phone: {{contact.phone}}</p>
-           <p>Email: {{contact.email}}</p>
-         </md-card-content>
-         </div>
-         <span class='favoriteIcon'><img ng-if="!isFavorite(contact)"  src="/images/not-favorite.svg" alt="Not Favorited "><img ng-if="isFavorite(contact)" src="/images/favorite.svg" alt="Not Favorited "></span>
+
+      <md-card md-theme="default" md-theme-watch class='contactList' layout-padding ng-repeat="contact in contacts | filter:{firstName:search}" >
+        <a href="/contact/{{contact.id}}"  layout="row"  class="notLink">
+          <md-card-title-media>
+            <div class="md-media-lg card-media">
+              <img ng-if=contact.img ng-src="./images/{{contact.img}}" class='contactList_img' alt="">
+              <img ng-if=!contact.img ng-src="./images/stormtrooper.jpg" class='contactList_img' alt="">
+            </div>
+          </md-card-title-media>
+         <div layout='column'>
+           <md-card-title>
+             <md-card-title-text>
+               <span class="md-headline">{{contact.firstName}} {{contact.lastName}}</span>
+             </md-card-title-text>
+           </md-card-title>
+           <md-card-content>
+             <p>Phone: {{contact.phone}}</p>
+             <p>Email: {{contact.email}}</p>
+           </md-card-content>
+           </div>
+          </a>
+         <span class='favoriteIcon' ng-click="favoriteToggle(contact)"><img ng-if="!isFavorite(contact)"  src="/images/not-favorite.svg" alt="Not Favorited "><img ng-if="isFavorite(contact)" src="/images/favorite.svg" alt="Not Favorited "></span>
        </md-card>
-     </a>
+
   </div>
   <md-button class="md-fab md-primary" aria-label="Use Android" ng-click="addContact($event)">
     <md-tooltip

@@ -21,6 +21,9 @@
   bottom: 0;
   right: 0;
 }
+.favoriteIcon:active, .favoriteIcon:focus {
+  outline: none;
+}
 
 .md-fab {
   position: fixed;
@@ -53,8 +56,12 @@
   font-size: 18px;
 }
 
-.noUnderline {
+.notLink {
   text-decoration: none;
+  color: black;
+}
+.notLink:hover, .noLink:active, .noLink:visited {
+  color:black;
 }
 
 md-input-container.search {
