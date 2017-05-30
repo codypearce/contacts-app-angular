@@ -12,10 +12,17 @@ function DialogController($scope, $mdDialog, $http, contacts, labels, locals) {
   $scope.cancel = function() {
     $mdDialog.cancel();
   };
+  
   $scope.addContact = function(contact) {
     $mdDialog.hide();
     contacts.addContact(contact);
   };
+
+  $scope.editContact = function(contact) {
+    $mdDialog.hide();
+    contacts.editContact(contact);
+  }
+
   $scope.uploadFile = function(elem) {
     $scope.image = elem.files
     $scope.$apply();
@@ -31,9 +38,5 @@ function DialogController($scope, $mdDialog, $http, contacts, labels, locals) {
       console.log('success');
     })
 
-  }
-  $scope.editContact = function(contact) {
-    $mdDialog.hide();
-    contacts.editContact(contact);
   }
 }
