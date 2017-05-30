@@ -39,7 +39,7 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts, fi
   $scope.addContact = function(ev) {
    $mdDialog.show({
      controller: DialogController,
-     templateUrl: '../templates/addContact.html',
+     templateUrl: '../templates/dialogs/addContact.html',
      parent: angular.element(document.body),
      targetEvent: ev,
      clickOutsideToClose:true,

@@ -6,7 +6,7 @@ app.controller('contactCtrl', function($scope, $routeParams, contacts,  $mdDialo
   $scope.editContact = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: '../templates/editContact.html',
+      templateUrl: '../templates/dialogs/editContact.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
