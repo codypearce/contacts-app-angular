@@ -39,6 +39,10 @@ app.controller('mainCtrl', function($scope,  $mdSidenav, $mdDialog, contacts, fi
     }
   });
 
+  $scope.isFavorite = function(contact) {
+    return contact.labels.indexOf('favorites') > -1;
+   }
+
   $scope.addContact = function(ev) {
    $mdDialog.show({
      controller: DialogController,

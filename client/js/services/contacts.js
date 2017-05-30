@@ -16,7 +16,7 @@ app.service('contacts', function() {
         phone: '555-555-5554',
         email: 'idontlikesand@empire.io',
         img: 'darth-vader.jpg',
-        labels: ['work', 'family'],
+        labels: ['work', 'favorites'],
       },
       {
         id: 3,
@@ -25,7 +25,7 @@ app.service('contacts', function() {
         phone: '555-555-5553',
         email: 'youreshort@rebels.io',
         img: 'leia-skywalker.jpg',
-        labels: ['family', 'favorites'],
+        labels: ['family', 'friends'],
       },
     ];
     this.num = 4;

@@ -19,6 +19,7 @@
            <p>Email: {{contact.email}}</p>
          </md-card-content>
          </div>
+         <span class='favoriteIcon'><img ng-if="!isFavorite(contact)"  src="/images/not-favorite.svg" alt="Not Favorited "><img ng-if="isFavorite(contact)" src="/images/favorite.svg" alt="Not Favorited "></span>
        </md-card>
      </a>
   </div>

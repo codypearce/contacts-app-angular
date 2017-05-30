@@ -6,6 +6,7 @@
 
 .contactList {
   width: 600px;
+  position: relative;
 }
 .contactList:hover {
   background: rgba(158,158,158,0.2);
@@ -14,6 +15,11 @@
 .contactList_img {
   height: 150px;
   width: 200px;
+}
+.favoriteIcon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .md-fab {
