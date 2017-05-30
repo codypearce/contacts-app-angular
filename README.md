@@ -1,6 +1,8 @@
 # Contacts app built on angular
 Simple Contacts app for managing contacts. Create contacts, add name, phone number, email, and organize into different categories. Delete and edit contacts. There is no database and the node server is simiply serving static files.
 
+<img src="https://raw.githubusercontent.com/codypearce/contacts-app-angular/master/assets/contactapp.png" height="350">
+
 Just a simple practice app.
 
 ## Getting Started
